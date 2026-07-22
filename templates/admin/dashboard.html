@@ -5,16 +5,22 @@
 {% endblock %}
 
 {% block body %}
-<h1>This is gus's blog site</h1>
-<a href="/admin">Go to Admin Dashboard</a>
+<h1>Admin Dashboard</h1>
+<a href="/">Back to Home Page</a>
+<a href="/admin/add">Add Entry</a>
 {% if posts|length < 1%} 
-<h4>No posts have been published. Come back soon! </h4>
+<h4>No posts have been published. Add an entry above.</h4>
 {% else %} 
 <table>
     {% for post in posts%}
     <tr>
         <td>{{post.title}}</td>
         <td>{{post.date_created.date()}}</td>
+        <td>
+            <a href="/">Delete</a>
+            <br>
+            <a href="/admin/edit/{{post.id}}">Edit</a>
+        </td>
     </tr>
     {% endfor %}
 </table>
