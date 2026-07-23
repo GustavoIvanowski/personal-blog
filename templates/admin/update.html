@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block body %}
-<h1>New Blog Post</h1>
+<h1>Update Blog Post</h1>
 <a href="/admin">Back to Admin Dashboard</a>
 <form method="POST">
-    <input type="text" name="title" placeholder="title">
-    <textarea name="content" rows="40", cols="50" placeholder="content"></textarea>
-    <input type="submit" value="Publish">
+    <input type="text" name="title" placeholder="title" value="{{post.title}}">
+    <textarea name="content" rows="40", cols="50" placeholder="content">{{post.content}}</textarea>
+    <input type="submit" value="Save">
 </form>
 {% endblock %}
