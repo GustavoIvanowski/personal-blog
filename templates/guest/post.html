@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>{{ post.title }}</h1>
+<h3>{{ post.date_created.date() }}</h3>
+<a href="{{ url_for('home') }}">Back to Home Page</a>
+<text id="postContent"><br>{{ post.content }}</text>
+
+{% endblock %}

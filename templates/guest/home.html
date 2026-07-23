@@ -6,14 +6,14 @@
 
 {% block body %}
 <h1>This is gus's blog site</h1>
-<a href="/admin">Go to Admin Dashboard</a>
+<a href="{{ url_for('dashboard')}}">Go to Admin Dashboard</a>
 {% if posts|length < 1%} 
 <h4>No posts have been published. Come back soon! </h4>
 {% else %} 
 <table>
     {% for post in posts%}
-    <tr>
-        <td>{{post.title}}</td>
+    <tr onclick="window.location='{{ url_for('post', id=post.id) }}'" style="cursor: pointer">
+        <td><br>{{post.title}}</td>
         <td>{{post.date_created.date()}}</td>
     </tr>
     {% endfor %}

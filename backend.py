@@ -36,7 +36,7 @@ def verify_password(username, password):
     if username in users and check_password_hash(users[username], password):
         return username
 
-# YOU EITHER RUN THAT ROUTE OR WE RUN BACK TO THE GHETTO
+# Routez
 
 @app.route("/")
 def home():
@@ -48,6 +48,11 @@ def home():
 def dashboard():
     posts = Blog.query.order_by(Blog.date_created).all()
     return render_template('admin/dashboard.html', posts=posts)
+
+@app.route("/post/<int:id>")
+def post(id):
+    post = Blog.query.get_or_404(id)
+    return render_template("/guest/post.html", post=post)
 
 @app.route("/admin/add", methods=['POST', 'GET'])
 def add():

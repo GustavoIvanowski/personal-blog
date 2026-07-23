@@ -15,4 +15,12 @@ body {
 }
 h1 {
     font-family: sans-serif;
+    margin-bottom: 0;
+}
+h3 {
+    margin-top: 0;
+}
+
+#postContent {
+    width: 50%;
 }

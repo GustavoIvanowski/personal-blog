@@ -6,20 +6,20 @@
 
 {% block body %}
 <h1>Admin Dashboard</h1>
-<a href="/">Back to Home Page</a>
-<a href="/admin/add">Add Entry</a>
+<a href="{{ url_for('home') }}">Back to Home Page</a>
+<a href="{{ url_for('add') }}">Add Entry</a>
 {% if posts|length < 1%} 
 <h4>No posts have been published. Add an entry above.</h4>
 {% else %} 
 <table>
     {% for post in posts%}
-    <tr>
+    <tr onclick="window.location='{{ url_for('update', id=post.id) }}'" style="cursor: pointer">
         <td>{{post.title}}</td>
         <td>{{post.date_created.date()}}</td>
         <td>
-            <a href="/admin/delete/{{post.id}}">Delete</a>
+            <a href="{{ url_for('delete', id=post.id) }}">Delete</a>
             <br>
-            <a href="/admin/edit/{{post.id}}">Edit</a>
+            <a href="{{ url_for('update', id=post.id) }}">Edit</a>
         </td>
     </tr>
     {% endfor %}

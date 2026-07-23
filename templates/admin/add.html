@@ -6,7 +6,7 @@
 
 {% block body %}
 <h1>New Blog Post</h1>
-<a href="/admin">Back to Admin Dashboard</a>
+<a href="{{ url_for('dashboard') }}">Back to Admin Dashboard</a>
 <form method="POST">
     <input type="text" name="title" placeholder="title">
     <textarea name="content" rows="40", cols="50" placeholder="content"></textarea>
