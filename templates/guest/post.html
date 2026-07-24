@@ -6,8 +6,8 @@
 
 {% block body %}
 <h1>{{ post.title }}</h1>
-<h3>{{ post.date_created.date() }}</h3>
+<h2>{{ post.date_created.date() }}</h2>
+<text id="postContent"><br>{{ post.content }} <br><br></text>
 <a href="{{ url_for('home') }}">Back to Home Page</a>
-<text id="postContent"><br>{{ post.content }}</text>
 
 {% endblock %}

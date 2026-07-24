@@ -6,10 +6,10 @@
 
 {% block body %}
 <h1>Update Blog Post</h1>
-<a href="{{ url_for('dashboard') }}">Back to Admin Dashboard</a>
+<a href="{{ url_for('dashboard') }}" style="margin-top: 5px;">Back to Admin Dashboard</a>
 <form method="POST">
     <input type="text" name="title" placeholder="title" value="{{post.title}}">
-    <textarea name="content" rows="40", cols="50" placeholder="content">{{post.content}}</textarea>
+    <textarea name="content" rows="40", cols="50" placeholder="content" class="content">{{post.content}}</textarea>
     <input type="submit" value="Save">
 </form>
 {% endblock %}

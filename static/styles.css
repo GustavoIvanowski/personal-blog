@@ -12,15 +12,56 @@ body {
     padding-left: 50px;
     padding-right: 100px;
     height: 96%;
+    background-color:beige;
 }
 h1 {
     font-family: sans-serif;
     margin-bottom: 0;
 }
-h3 {
-    margin-top: 0;
+h2 {
+    margin-top: 3px;
 }
 
 #postContent {
     width: 50%;
+    white-space: pre-wrap;
+}
+
+form {
+    width: 50%;
+    padding: 5px;
+    border-radius: 7px;
+    margin-top: 15px;
+}
+
+input[type=text] {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+    width: 90%;
+    border-radius: 7px;
+    border-width: 1px;
+    padding: 6px;
+}
+
+.content {
+    font-size: 15px;
+    border-radius: 7px;
+    border-width: 1px;
+    margin-bottom: 5px;
+    resize: none;
+    width: 90%;
+    font-family: sans-serif;
+    padding: 6px;
+}
+
+input[type=submit] {
+    padding: 6px;
+    font-size: 15px;
+    font-family: sans-serif;
+    width: 92%;
+}
+
+tr {
+    text-decoration: underline;
 }
